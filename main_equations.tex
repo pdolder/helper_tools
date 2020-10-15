@@ -1,0 +1,47 @@
+\documentclass[multi={mymath},border=1pt]{standalone}
+\usepackage{amsmath}
+\newenvironment{mymath}{$\displaystyle}{$}
+
+%% Type equations
+%% Compile to PDF
+%% convert to png with (from linux command line)
+%% pdftoppm.exe main_equations.pdf equation -png -rx 300 -ry 300
+
+\begin{document}
+
+% age-based
+\begin{mymath}
+N_{a,y,s+1} = \left(N_{a,y,s} \cdot e^{-\frac{M{,a,y}}{2}} - C_{a,y,s}\right)\cdot
+	e^{-\frac{M_{a,y,s}}{2}}
+\end{mymath}
+
+% biomass based
+\begin{mymath}
+B_{y,s+1} = B_{y,s} + g\left(B_{y,s}\right) - C_{y,s}
+\end{mymath}
+
+% catch only 
+\begin{mymath}
+B_{y,s+1} = B_{y,s} 
+\end{mymath}
+
+%% Cobb-Douglas
+\begin{mymath}
+C_{fl,m,s,a} = q_{fl,m,s,a} \cdot E_{fl,m}^{\alpha} \cdot B_{s,a}^{\beta}
+\end{mymath}
+
+%% selectivity
+
+\begin{mymath}
+q_{fl,m,s,a,g=2} = \bigg( P_{fl,m} \cdot \big( q_{fl,m,s,a,g=1} \cdot
+\frac{Sel_{fl,m,s,a,g=2}}{Sel_{fl,m,s,a,g=1}}\big) \bigg) + \bigg( \left(1 -
+	P_{fl,m}
+\right) \cdot q_{fl,m,s,a,g=1} \bigg)
+\end{mymath}
+
+
+
+
+%%
+
+\end{document}
